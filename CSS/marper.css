@@ -1,0 +1,751 @@
+@charset "utf-8";
+/* CSS Document */
+@media only screen and (max-width: 1400px){
+	body{
+		background-color: #FFFFFF;
+		font-size: 100%;
+		}
+	a{
+		text-decoration: none;
+		color: black;
+		}
+	h1{
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size: 2em;
+		text-overflow: ellipsis;
+		white-space:pre-wrap;
+		overflow: inherit;
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+	p{
+		font-family: "Darker Grotesque", "Arial";
+		font-size: 1.25em;
+		text-overflow: ellipsis;
+		white-space:pre-line;
+		overflow: hidden;
+	}
+	h4{
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		text-decoration: underline;
+	}
+	.logo{
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		margin-top: 10px;
+		height: 100px;
+		}
+/*	navbar*/
+	.container{
+		width: auto;
+		height: 50px;
+		display:flex;
+		justify-content: space-evenly;
+		}
+	.navbarCustom-home, .navbarCustom-profile, .navbarCustom-portfolio, .navbarCustom-connect{
+		align-self: flex-end;
+		font-family: "Darker Grotesque", "Arial";
+		font-size:24px;
+		}
+/*	home area*/
+	.home{
+		overflow-y: scroll;
+		height:400px;
+		scroll-snap-type: y mandatory;
+		scroll-padding:15px;
+		}
+	.intro{
+		height: 300px;
+		display: grid;
+		grid-template: 15% 85% / 33% 33% 33%;
+		scroll-snap-align: start;
+		}
+	.introText{
+		justify-self:center;
+		grid-area: 1/2/1/2;
+		margin-top: 1px;
+		
+	}
+	.introPic{
+		align-self:center;
+		justify-self:center;
+		grid-area: 2/2;
+		height: auto;
+		width: 100%;
+	}
+	.introSample{
+		padding: 0% 10% 0% 10%; 
+		grid-area: 2/1/2/1;
+		align-self: center;
+		justify-content: space-around;
+	}
+	.introSample2{
+		padding: 0% 10% 0% 10%; 
+		grid-column-start: 3; 
+		grid-row-start: 2;
+		align-self: end;
+		justify-content: space-around;
+	}
+	.profile{
+		margin-top: 50px;
+		position: relative;
+		height: 300px;
+		display: grid;
+		grid-template: 33% 50% 17% / 30% 70%;
+		scroll-snap-align: start;
+	}
+	.profilePic{
+		padding-left: 20%;
+		height:auto;
+		width: 100%;
+		grid-area:1/1/3;
+		justify-self: center;
+	}
+	.profileText{
+		text-align: center;
+		grid-area: 1/2/1/2;
+		justify-self: center;
+	}
+	.profileSample{
+		grid-area: 2/2/2/2;
+		padding: 0% 10% 0% 10%;
+		align-self:center;
+	}
+	.profileLink{
+		padding: 0% 10% 0% 0%;
+		grid-area: 3/2;
+		justify-self: flex-end;
+		align-self: flex-end;
+	}
+	.portfolio{
+		margin-top: 50px;
+		position: relative;
+		height: 400px;
+		display: grid;
+		grid-template: 33% 50% 17% / 70% 30%;
+		scroll-snap-align: start;
+		
+	}
+	.portfolioText{
+		text-align: center;
+		grid-area: 1/1/1/1;
+		align-self: flex-end;
+		align-self:center;
+	}
+	.portfolioSample{
+		grid-area: 2/1/2/1;
+		padding: 0% 10% 0% 10%;
+	}
+	.portfolioWorks{
+		align-self: center;
+		justify-self:center;
+		grid-area:1/2/3/2;
+		padding: 20% 10% 0% 10%;
+	}
+	.portfolioLink{
+		padding: 0% 0% 0% 10%;
+		grid-area: 3/1;
+		justify-self: flex-start;
+		align-self: flex-end;
+	}
+	.connect{
+		display: grid;
+		height: 300px;
+		grid-template: 30% 10% 60% / 100%;
+		scroll-snap-align: start;
+	}
+	.connectText{
+		grid-area:1/1;
+		align-self:center;
+		justify-self:center;
+	}
+	.connectContainer{
+		grid-area:3/1/3/1;
+		display:flex;
+		justify-content: space-between;
+		padding: 0% 10% 0% 10%;
+	}
+	.connectSample{
+		grid-area:2/1/2/1;
+		align-self:center;
+		justify-self:center;
+	}
+	.connectLink{
+		cursor: pointer;
+	}
+	.connectDescription{
+		position:relative;
+		padding-bottom: 5%;
+		align-self: flex-end;
+		text-emphasis: auto;
+		justify-self:center;
+	}
+	.connectImg{
+		height: 100px;
+		width: 100px;
+	}
+	
+	
+	
+	.modal-background{
+		position:fixed;
+		width:100%;
+		height:100vh;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,.5);
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s;
+	}
+	.bg-active{
+		visibility:visible;
+		opacity: 1;
+	}
+	.modal-custom{
+		background-color: #FFFFFF;
+		width: 80%;
+		height: 90%;
+		display:grid;
+		grid: 21% 13% 13% 13% 25% 10% 10%/15% 85%;
+	}
+	.close{
+		cursor: pointer;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size: 2vw;
+		grid-area:1/2;
+		padding-right: 2%;
+		position: absolute;
+		top: 50px;
+		right: 140px;
+	}
+	.modal-title{
+		justify-self: center;
+		align-self: flex-start;
+		padding-bottom: 3%;
+		grid-area: 1/1/1/3;
+	}
+	.modal-description{
+		align-self: flex-end;
+		justify-content: space-around;
+		grid-area: 1/1/1/3;
+		position:relative;
+		padding: 0% 5% 1% 5%;
+	}
+	.labelText{
+		font-family: "Darker Grotesque", Arial;
+		font-size: 1.5em;
+	}
+	.name-label{
+		grid-area: 2/1/2/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputName{
+		width: 30%;
+		align-self:center;
+		grid-area: 2/2/2/3;
+	}
+	.email-label{
+		grid-area: 3/1/3/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputEmail{
+		grid-area: 3/2/3/3;
+		align-self:center;
+	}
+	.subject-label{
+		grid-area: 4/1/4/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputSubject{
+		grid-area: 4/2/4/3;
+		align-self:center;
+	}
+	.message-label{
+		grid-area: 5/1/5/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputMessage{
+		grid-area: 5/2/5/3;
+		align-self:center;
+	}
+	.btn-position{
+		grid-area: 6/1/6/3;
+		justify-self: center;
+		align-self:center;
+	}
+	.custom-button{
+		width: 15vw;
+		background-color: #444444;
+		border:none;
+		text-align: center;
+		color: white;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size:1.5em;
+	}
+/*	modal*/
+	.modal-background-sent{
+		position:fixed;
+		width:100%;
+		height:100vh;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,.5);
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+	}
+	.bg-active-2{
+		visibility:visible;
+		opacity: 1;
+	}
+	.modal-custom-2{
+		background-color: #FFFFFF;
+		width: 80%;
+		height: 90%;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.close-2{
+		cursor: pointer;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size: 2vw;
+		grid-area:1/2;
+		padding-right: 2%;
+		position: absolute;
+		top: 50px;
+		right: 140px;
+	}
+	.contact-form{
+		margin: 0% 0% 10% 20%;
+	}
+	
+	.errorName, .errorEmail, .errorMessage{
+		color: red;
+		font-size: 1.0em;
+		font-family: "Darker Grotesque", "Arial";
+		display:none;
+	} 
+		
+}
+
+@media only screen and (max-width: 1920px){
+	body{
+		background-color: #FFFFFF;
+		font-size: 100%;
+		}
+	a{
+		text-decoration: none;
+		color: black;
+		}
+	h1{
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size: 4em;
+		text-overflow: ellipsis;
+		white-space:pre-wrap;
+		overflow: inherit;
+	}
+	p{
+		font-family: "Darker Grotesque", Arial;
+		font-size: 2em;
+		text-overflow: ellipsis;
+		white-space:pre-line;
+		overflow: hidden;
+	}
+	h4{
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		text-decoration: underline;
+		font-size:1.5em;
+	}
+	.top{
+		height: 100px;
+		display: grid;
+		grid-template: 100% / 33% 33% 33%;
+	}
+	.greeting{
+		grid-area: 1/1;
+		align-self: center;
+		justify-self: center;
+		font-family: "Darker Grotesque", Arial;
+		font-size: 2em;
+		
+	}
+	.login-btn{
+		grid-area: 1/3;
+		align-self: center;
+		justify-self: center;
+	}
+	.logo{
+		margin-top: 10px;
+		grid-area: 1/2;
+		justify-self: center;
+		}
+	.container{
+		width: auto;
+		height: 50px;
+		display:flex;
+		justify-content: space-evenly;
+		}
+	.navbarCustom-home, .navbarCustom-profile, .navbarCustom-portfolio, .navbarCustom-connect{
+		align-self: flex-end;
+		font-family: "Darker Grotesque", "Arial";
+		font-size:24px;
+		}
+	
+	.home{
+		overflow-y: scroll;
+		height:700px;
+		scroll-snap-type: y mandatory;
+		scroll-padding:15px;
+		}
+	.intro{
+		height: 720px;
+		display: grid;
+		grid-template: 15% 85% / 33% 33% 33%;
+		scroll-snap-align: start;
+		}
+	.introText{
+		justify-self:center;
+		grid-area: 1/2/1/2;
+		margin-top: 1px;
+		
+	}
+	.introPic{
+		align-self:center;
+		justify-self:center;
+		grid-area: 2/2;
+		height: auto;
+		width: 100%;
+	}
+	.introSample{
+		padding: 0% 10% 0% 10%; 
+		grid-area: 2/1/2/1;
+		align-self: center;
+		justify-content: space-around;
+	}
+	.introSample2{
+		padding: 0% 10% 0% 10%; 
+		grid-column-start: 3; 
+		grid-row-start: 2;
+		align-self: end;
+		justify-content: space-around;
+	}
+	.profile{
+		margin-top: 50px;
+		position: relative;
+		height: 650px;
+		display: grid;
+		grid-template: 33% 50% 17% / 30% 70%;
+		scroll-snap-align: start;
+	}
+	.profilePic{
+		padding-left: 20%;
+		height:auto;
+		width: 100%;
+		grid-area:1/1/3;
+		justify-self: center;
+	}
+	.profileText{
+		text-align: center;
+		grid-area: 1/2/1/2;
+		justify-self: center;
+	}
+	.profileSample{
+		grid-area: 2/2/2/2;
+		padding: 0% 10% 0% 10%;
+		align-self:center;
+	}
+	.profileLink{
+		padding: 0% 10% 0% 0%;
+		grid-area: 3/2;
+		justify-self: flex-end;
+		align-self: flex-end;
+	}
+	.portfolio{
+		margin-top: 50px;
+		position: relative;
+		height: 650px;
+		display: grid;
+		grid-template: 33% 50% 17% / 70% 30%;
+		scroll-snap-align: start;
+		
+	}
+	.portfolioText{
+		text-align: center;
+		grid-area: 1/1/1/1;
+		align-self: flex-end;
+		align-self:center;
+	}
+	.portfolioSample{
+		grid-area: 2/1/2/1;
+		padding: 0% 10% 0% 10%;
+	}
+	.portfolioWorks{
+		align-self: center;
+		justify-self:center;
+		grid-area:1/2/3/2;
+		padding: 20% 10% 0% 10%;
+	}
+	.portfolioLink{
+		padding: 0% 0% 0% 10%;
+		grid-area: 3/1;
+		justify-self: flex-start;
+		align-self: flex-end;
+	}
+	.connect{
+		display: grid;
+		height: 650px;
+		grid-template: 30% 10% 60% / 100%;
+		scroll-snap-align: start;
+	}
+	.connectText{
+		grid-area:1/1;
+		align-self:center;
+		justify-self:center;
+	}
+	.connectContainer{
+		grid-area:3/1/3/1;
+		display:flex;
+		justify-content: space-between;
+		padding: 0% 10% 0% 10%;
+	}
+	.connectSample{
+		grid-area:2/1/2/1;
+		align-self:center;
+		justify-self:center;
+	}
+	.connectLink{
+		cursor: pointer;
+	}
+	.connectDescription{
+		position:relative;
+		padding-bottom: 5%;
+		align-self: flex-end;
+		text-emphasis: auto;
+		justify-self:center;
+	}
+	.connectImg{
+		height: 200px;
+		width: 200px;
+	}
+	
+	.modal-background{
+		position:fixed;
+		width:100%;
+		height:100vh;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,.5);
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s, opacity 0.5s;
+	}
+	.bg-active{
+		visibility:visible;
+		opacity: 1;
+	}
+	.modal-custom{
+		background-color: #FFFFFF;
+		width: 90%;
+		height: 90%;
+		display:grid;
+		grid: 25% 75%/15% 85%;
+	}
+	.close{
+		cursor: pointer;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size: 2vw;
+		grid-area:1/2;
+		padding-right: 2%;
+		position: absolute;
+		top: 50px;
+		right: 140px;
+	}
+	.modal-title{
+		justify-self: center;
+		align-self: flex-start;
+		padding-bottom: 3%;
+		grid-area: 1/1/1/3;
+	}
+	.modal-description{
+		align-self: flex-end;
+		justify-content: space-around;
+		grid-area: 1/1/1/3;
+		position:inherit;
+		padding: 0% 7% 0% 5%;
+	}
+	form{
+		grid-area: 2/1/2/2;
+		display: grid;
+		grid: 15% 15% 15% 40% 15%/15% 85%;
+		margin: 10% 0px 10% 80%;
+	}
+	.labelText{
+		font-family: "Darker Grotesque", Arial;
+		font-size: 2em;
+		grid-column: 2;
+	}
+	input[type=text], input[type=email]{
+		padding: 15px 10px;
+		margin: 8px 0;
+	}
+	input[type=text]:focus{
+		background-color: #F2FBFF;
+		border: 3px solid #CEDFF0;
+	}
+	input[type=email]:focus{
+		background-color: #F2FBFF;
+		border: 3px solid #CEDFF0;
+	}
+	.name-label{
+		grid-area: 1/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputName{
+		width: 100%;
+		align-self:center;
+		grid-area: 1/2/1/2;
+		padding-left: 50px;
+	}
+	.email-label{
+		grid-area: 2/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputEmail{
+		width: 100%;
+		grid-area: 2/2/2/2;
+		align-self:center;
+		padding-left: 50px;
+	}
+	.subject-label{
+		grid-area: 3/1;
+		justify-self:flex-end;
+		align-self:center;
+		padding-right: 10%;
+	}
+	.inputSubject{
+		width: 100%;
+		grid-area: 3/2/3/2;
+		align-self:center;
+		padding-left: 50px;
+	}
+	.message-label{
+		grid-area: 4/1;
+		justify-self:flex-end;
+		align-self:flex-start;
+		padding-top: 10%;
+		padding-right: 10%;
+	}
+	.inputMessage{
+		grid-area: 4/2;
+		align-self:flex-start;
+		padding-left: 50px;
+		padding-top: 20%;
+	}
+	textarea{
+		height: 130px;
+		padding: 10%;
+		resize: none;
+		scroll-behavior:smooth;
+	}
+	textarea:focus{
+		background-color: #F2FBFF;
+		border: 3px solid #CEDFF0;
+	}
+	.btn-position{
+		grid-area: 5/1/5/2;
+		margin: 0px 0px 50px 200px;
+		padding: 0 0 20% 200px;
+		align-self: center;
+	}
+	.custom-button{
+		width: 20vw;
+		height: 5vw;
+		background-color: #444444;
+		border:none;
+		text-align: center;
+		color: white;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size:3em;
+	}
+	.modal-background-sent{
+		position:fixed;
+		width:100%;
+		height:100vh;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,.5);
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+	}
+	.bg-active-2{
+		visibility:visible;
+		opacity: 1;
+	}
+	.modal-custom-2{
+		background-color: #FFFFFF;
+		width: 90%;
+		height: 90%;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.close-2{
+		cursor: pointer;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size: 2vw;
+		grid-area:1/2;
+		padding-right: 2%;
+		position: absolute;
+		top: 50px;
+		right: 140px;
+	}
+	
+	.btn-dark-custom{
+		width: 5vw;
+		background-color: #1E1E1E;
+		border:none;
+		text-align: center;
+		color: white;
+		font-family: "Darker Grotesque SemiBold", "Arial Black";
+		font-size:1.5em;
+		border-radius: 5px;
+	}
+	
+}
+ 
+
+ 
