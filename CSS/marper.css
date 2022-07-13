@@ -52,8 +52,6 @@
 		}
 /*	home area*/
 	.home{
-		overflow-y: scroll;
-		height:400px;
 		scroll-snap-type: y mandatory;
 		scroll-padding:15px;
 		}
@@ -381,6 +379,7 @@
 		height: 100px;
 		display: grid;
 		grid-template: 100% / 33% 33% 33%;
+		position: fixed;
 	}
 	.greeting{
 		grid-area: 1/1;
