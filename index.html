@@ -15,20 +15,20 @@
 </head>
 <body>
 	<div class= "top">
-		<?php if(empty($_SESSION['username'])){?>
+<!-- 		<?php if(empty($_SESSION['username'])){?>
 		<div class = "greeting"></div>
 		<img class="logo" src="./assets/assets-01.png" alt="marpers web logo" height="100px" width="100px">
 		<div class="login-btn">
 			<a href="login.php" type="button" class="btn-dark-custom">Log In</a>
 		</login-btn>
 		</div>
-		<?php } ?>
+		<?php } ?> -->
 	
 		<?php if(!(empty($_SESSION['username']))){?>
-		<div class = "greeting"> Hello <b><?php echo $_SESSION['username'];?></b>!</div>
-		<img class="logo" src="./assets/assets-01.png" alt="marpers web logo" height="100px" width="100px">
+<!-- 		<div class = "greeting"> Hello <b><?php echo $_SESSION['username'];?></b>!</div> -->
+		<img class="logo" src="./assets/assets-01.png" alt="marpers web logo" height="80px" width="80px">
 		<div class="login-btn">
-			<a href="logout.php" type="button" class="btn-dark-custom" id="logout">Log Out</a>
+			<a href="logout.php" type="button" class="btn-dark-custom px-3" id="logout">Log Out</a>
 		</login-btn>
 		</div>
 		<?php } ?>
