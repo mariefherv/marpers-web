@@ -43,11 +43,12 @@
 
 /*	home area*/
 	.home{
-		overflow-y: scroll;
-		height:85vh;
 		scroll-snap-type: y mandatory;
 		scroll-padding:15px;
 		}
+	.top {
+		position: fixed;
+	}
 }
 
 
@@ -84,6 +85,7 @@
 		height: 200px;
 		display: grid;
 		grid-template: 100% / 33% 34% 33%;
+		position: fixed;
 	}
 	
 	.logo{
