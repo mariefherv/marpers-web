@@ -53,7 +53,7 @@
 /*	home area*/
 	.home{
 		overflow-y: scroll;
-		height:366px;
+		height:300px;
 		scroll-snap-type: y mandatory;
 		scroll-padding:15px;
 		}
