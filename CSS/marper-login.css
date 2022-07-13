@@ -44,7 +44,7 @@
 /*	home area*/
 	.home{
 		overflow-y: scroll;
-		height:400px;
+		height:85vh;
 		scroll-snap-type: y mandatory;
 		scroll-padding:15px;
 		}
